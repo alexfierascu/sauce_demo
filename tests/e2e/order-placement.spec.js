@@ -254,7 +254,8 @@ test.describe('E2E Order Placement', () => {
     });
   });
 
-  test('should take visual snapshots at each checkout step', async ({ page }) => {
+  test('should take visual snapshots at each checkout step', { tag: '@visual' }, async ({ page }) => {
+    test.skip(!!process.env.CI, 'Visual snapshots are OS-specific — run locally to generate baselines');
     await test.step('Login and add item to cart', async () => {
       await loginAs(page, USERS.standard);
       const inventoryPage = new InventoryPage(page);

@@ -28,13 +28,13 @@ jobs:
         env:
           CI: true
           BASE_URL: https://www.saucedemo.com
-          STANDARD_USER: standard_user
-          LOCKED_OUT_USER: locked_out_user
-          PROBLEM_USER: problem_user
-          PERFORMANCE_GLITCH_USER: performance_glitch_user
-          ERROR_USER: error_user
-          VISUAL_USER: visual_user
-          PASSWORD: secret_sauce
+          STANDARD_USER: ${{ secrets.STANDARD_USER }}
+          LOCKED_OUT_USER: ${{ secrets.LOCKED_OUT_USER }}
+          PROBLEM_USER: ${{ secrets.PROBLEM_USER }}
+          PERFORMANCE_GLITCH_USER: ${{ secrets.PERFORMANCE_GLITCH_USER }}
+          ERROR_USER: ${{ secrets.ERROR_USER }}
+          VISUAL_USER: ${{ secrets.VISUAL_USER }}
+          PASSWORD: ${{ secrets.PASSWORD }}
           WORKERS: 4
 
       - uses: actions/upload-artifact@v4
